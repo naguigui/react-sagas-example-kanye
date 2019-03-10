@@ -6,8 +6,7 @@ import "./index.css";
 import AppContainer from "./containers/app-container";
 import * as serviceWorker from "./serviceWorker";
 
-const initialState = window.__INITIAL_STATE__;
-const store = createStore(initialState);
+const store = createStore();
 
 const MOUNT_NODE = document.getElementById("root");
 
