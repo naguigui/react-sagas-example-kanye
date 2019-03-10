@@ -1,25 +1,29 @@
 import React from "react";
 import { connect } from "react-redux";
 import * as kanyeQuoteActions from "../../store/kanye-quote/actions";
+import LoadingSpinner from "../../components/loading-spinner";
 
 class AppContainer extends React.Component {
   componentDidMount() {
     const { kanyeQuoteRequest } = this.props;
     kanyeQuoteRequest();
-    // const response = await fetch("https://api.kanye.rest");
-    // const data = await response.json();
-    // console.log(data);
   }
   render() {
+    const { isLoading, isError, quote } = this.props;
     return (
       <div>
-        <span>Hello World</span>
+        {isLoading && !isError && !quote && <LoadingSpinner />}
+        {!isLoading && !isError && <span>{quote}</span>}
       </div>
     );
   }
 }
 
-const mapStateToProps = /* istanbul ignore next */ state => ({});
+const mapStateToProps = /* istanbul ignore next */ state => ({
+  quote: state.quote,
+  isLoading: state.isLoading,
+  isError: state.isError
+});
 
 const mapDispatchToProps = /* istanbul ignore next */ dispatch => ({
   kanyeQuoteRequest: () => {
