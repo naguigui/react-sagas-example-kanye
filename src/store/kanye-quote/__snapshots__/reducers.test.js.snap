@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`kanyeQuoteReducer GET_KANYE_QUOTE_ERROR action sets isError to true: new state 1`] = `
+Object {
+  "isError": true,
+  "isLoading": false,
+  "quote": "",
+}
+`;
+
+exports[`kanyeQuoteReducer GET_KANYE_QUOTE_REQUEST action sets isLoading to true: new state 1`] = `
+Object {
+  "isError": false,
+  "isLoading": true,
+  "quote": "",
+}
+`;
+
+exports[`kanyeQuoteReducer GET_KANYE_QUOTE_SUCCESS action updates quote with a payload and sets isLoading and isError to false: new state 1`] = `
+Object {
+  "isError": false,
+  "isLoading": false,
+  "quote": "I am real quote",
+}
+`;
