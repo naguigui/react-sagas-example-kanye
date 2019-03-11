@@ -20,8 +20,5 @@ export function* getKanyeQuote() {
 }
 
 export function* kanyeQuoteRequestWatcher() {
-  yield takeLatest(
-    kanyeQuoteActionTypes.GET_KANYE_QUOTE_REQUEST,
-    getKanyeQuote
-  );
+  yield takeLatest(kanyeQuoteActionTypes.KANYE_QUOTE_REQUEST, getKanyeQuote);
 }

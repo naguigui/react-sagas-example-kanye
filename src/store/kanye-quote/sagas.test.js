@@ -9,7 +9,7 @@ describe("kanyeQuoteRequestWatcher()", () => {
   it("should call the getKanyeQuote function", () => {
     const gen = kanyeSagas.kanyeQuoteRequestWatcher();
     expect(gen.next().value).toEqual(
-      takeLatest("GET_KANYE_QUOTE_REQUEST", kanyeSagas.getKanyeQuote)
+      takeLatest("KANYE_QUOTE_REQUEST", kanyeSagas.getKanyeQuote)
     );
   });
 });

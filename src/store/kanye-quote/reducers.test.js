@@ -17,7 +17,7 @@ describe("kanyeQuoteReducer", () => {
     expect(result).toEqual(initialState);
   });
 
-  describe("GET_KANYE_QUOTE_REQUEST action", () => {
+  describe("KANYE_QUOTE_REQUEST action", () => {
     it("sets isLoading to true", () => {
       const action = kanyeQuoteActions.kanyeQuoteRequest();
       const result = kanyeQuoteReducer(initialState, action);
@@ -26,7 +26,7 @@ describe("kanyeQuoteReducer", () => {
     });
   });
 
-  describe("GET_KANYE_QUOTE_SUCCESS action", () => {
+  describe("KANYE_QUOTE_SUCCESS action", () => {
     it("updates quote with a payload and sets isLoading and isError to false", () => {
       const payload = {
         quote: "I am real quote"
@@ -39,7 +39,7 @@ describe("kanyeQuoteReducer", () => {
     });
   });
 
-  describe("GET_KANYE_QUOTE_ERROR action", () => {
+  describe("KANYE_QUOTE_ERROR action", () => {
     it("sets isError to true", () => {
       const action = kanyeQuoteActions.kanyeQuoteError();
       const result = kanyeQuoteReducer(initialState, action);
