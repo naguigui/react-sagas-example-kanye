@@ -38,6 +38,7 @@
     "@babel/plugin-transform-modules-commonjs": "^7.2.0",
     "@babel/preset-env": "^7.3.4",
     "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.10.0"
+    "enzyme-adapter-react-16": "^1.10.0",
+    "jest-fetch-mock": "^2.1.1"
   }
 }

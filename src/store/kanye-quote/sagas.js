@@ -1,18 +1,21 @@
 import { takeLatest, put, call } from "redux-saga/effects";
 import * as kanyeQuoteActionTypes from "../kanye-quote/constants";
 import * as kanyeQuoteActions from "../kanye-quote/actions";
+import { fetchData } from "../../utils/fetchData";
 
 const KANYE_FETCH_URL = "https://api.kanye.rest";
 
 export function* getKanyeQuote() {
-  const response = yield call(fetch, KANYE_FETCH_URL);
-  if (response.ok) {
-    const data = yield response.json();
+  try {
+    const payload = yield call(fetchData, KANYE_FETCH_URL);
+    const { quote } = payload;
     yield put(
       kanyeQuoteActions.kanyeQuoteSuccess({
-        quote: data.quote
+        quote
       })
     );
+  } catch (e) {
+    yield put(kanyeQuoteActions.kanyeQuoteError());
   }
 }
 
