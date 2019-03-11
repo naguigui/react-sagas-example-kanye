@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppContainer rendering renders the error state when isLoading is false and isError is true 1`] = `
+<div
+  className="app-container-wrapper"
+>
+  <span>
+    Oh noes there was an error!
+  </span>
+</div>
+`;
+
+exports[`AppContainer rendering renders the loading state when isLoading is true and isError is false 1`] = `
+<div
+  className="app-container-wrapper"
+>
+  <LoadingSpinner />
+</div>
+`;
+
+exports[`AppContainer rendering renders with a quote when isLoading is false and isError is false 1`] = `
+<div
+  className="app-container-wrapper"
+>
+  <div
+    className="app-container-content"
+  >
+    <span
+      className="app-container-quote"
+    >
+      I am a space cowboy.
+    </span>
+    <RippledComponent
+      className=""
+      disabled={false}
+      initRipple={[Function]}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      style={Object {}}
+      unbounded={false}
+    >
+      Another one
+    </RippledComponent>
+  </div>
+</div>
+`;

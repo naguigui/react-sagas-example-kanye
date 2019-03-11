@@ -1,0 +1,4 @@
+{
+    "javascript.suggest.autoImports": false,
+    "javascript.suggest.enabled": false
+}

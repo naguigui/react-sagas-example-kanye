@@ -21,6 +21,9 @@ class AppContainer extends React.Component {
     return (
       <div className="app-container-wrapper">
         {isLoading && !isError && !quote && <LoadingSpinner />}
+        {!isLoading && isError && !quote && (
+          <span>Oh noes there was an error!</span>
+        )}
         {!isLoading && !isError && (
           <div className="app-container-content">
             <span className="app-container-quote">{quote}</span>
@@ -44,7 +47,11 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-export { mapStateToProps, mapDispatchToProps };
+export {
+  AppContainer as AppContainerComponent,
+  mapStateToProps,
+  mapDispatchToProps
+};
 export default connect(
   mapStateToProps,
   mapDispatchToProps
