@@ -15,7 +15,7 @@ describe("kanyeQuoteRequestWatcher()", () => {
 });
 
 describe("getKanyeQuote()", () => {
-  it("successfully makes the fetch call", () => {
+  it("successfully makes the fetch call and stores the correct data", () => {
     const payload = {
       quote: "hello"
     };
@@ -31,6 +31,15 @@ describe("getKanyeQuote()", () => {
           quote: payload.quote
         })
       )
+    );
+  });
+  it("fails to make the fetch call", () => {
+    const gen = kanyeSagas.getKanyeQuote();
+
+    gen.next();
+
+    expect(gen.throw(new Error()).value).toEqual(
+      put(kanyeQuoteActions.kanyeQuoteError())
     );
   });
 });
