@@ -4,7 +4,7 @@ import createSagaMiddleware from "redux-saga";
 
 import kanyeQuoteReducer from "./kanye-quote/reducers";
 
-import rootSaga from "./root.saga";
+import { kanyeQuoteRequestWatcher } from "./kanye-quote/sagas";
 
 export default (initialState = {}) => {
   const sagaMiddleware = createSagaMiddleware({});
@@ -15,7 +15,7 @@ export default (initialState = {}) => {
     compose(applyMiddleware(sagaMiddleware))
   );
 
-  sagaMiddleware.run(rootSaga);
+  sagaMiddleware.run(kanyeQuoteRequestWatcher);
 
   return store;
 };
